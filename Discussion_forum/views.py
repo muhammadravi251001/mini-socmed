@@ -4,8 +4,8 @@ from .forms import *
 # Create your views here.
 
 def home(request):
-    forums=forum.objects.all()
-    count=forums.count()
+    forums = forum.objects.all()
+    count= forum.objects.all().count()
     discussions=[]
     for i in forums:
         discussions.append(i.discussion_set.all())
