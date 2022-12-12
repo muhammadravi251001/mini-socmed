@@ -15,7 +15,7 @@
 </head>
 <body>
         <h2 class="jumbotron">
-            Forum yang aktif saat ini: {{count}}
+            
             <form method="POST" action="{% url 'addInForum' %}">
                 {% csrf_token %}
             <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Tambah Forum</button>
