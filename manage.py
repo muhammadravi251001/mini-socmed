@@ -18,7 +18,7 @@ def main():
 
 
 if __name__ == '__main__':
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Mini_Socmed.settings.dev")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Mini_Socmed.settings")
 
     import django
     django.setup()
