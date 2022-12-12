@@ -19,8 +19,6 @@ class Forum(models.Model):
 #child model
 class Discussion(models.Model):
 
-    #class Meta:
-    #    db_table = 'Discussion_forum'
 
     forum = models.ForeignKey(Forum,blank=True,on_delete=models.CASCADE)
     discuss = models.CharField(max_length=1000)
