@@ -5,13 +5,13 @@ from .forms import *
 
 def home(request):
     forums = Forum.objects.all()
-    #count= Forum.objects.all().count()
+    count= Forum.objects.all().count()
     discussions=[]
     for i in forums:
         discussions.append(i.discussion_set.all())
 
     context={'forums':forums,
-              #'count':count,
+              'count':count,
               'discussions':discussions}
     return render(request,'home.html',context)
 
