@@ -1,12 +1,8 @@
 from django.db import models 
     
 #parent model
-class Forum(models.Model):
-
-    class Meta:
-        db_table = 'Discussion_forum'
-    
-    name=models.CharField(max_length=200,default="anonymous")
+class forum(models.Model):
+    name=models.CharField(max_length=200,default="anonymous" )
     email=models.CharField(max_length=200,null=True)
     topic= models.CharField(max_length=300)
     description = models.CharField(max_length=1000,blank=True)
@@ -18,11 +14,7 @@ class Forum(models.Model):
 
 #child model
 class Discussion(models.Model):
-
-    #class Meta:
-    #    db_table = 'Discussion_forum'
-
-    forum = models.ForeignKey(Forum,blank=True,on_delete=models.CASCADE)
+    forum = models.ForeignKey(forum,blank=True,on_delete=models.CASCADE)
     discuss = models.CharField(max_length=1000)
 
     def __str__(self):

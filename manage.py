@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Mini_Socmed.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DataFlair_discsnForum.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -18,20 +18,4 @@ def main():
 
 
 if __name__ == '__main__':
-
     main()
-    '''
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Mini_Socmed.settings")
-
-    import django
-    django.setup()
-
-    # Override default port for `runserver` command
-    from django.core.management.commands.runserver import Command as runserver
-    runserver.default_addr = '0.0.0.0'
-    runserver.default_port = "8000"
-
-    from django.core.management import execute_from_command_line
-
-    execute_from_command_line(sys.argv)
-    '''
