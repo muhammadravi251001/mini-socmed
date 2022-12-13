@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataFlair discussion forum</title>
+    <title>Forum Diskusi</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"0>
     <style>
         .box{
@@ -15,10 +15,10 @@
 </head>
 <body>
         <h2 class="jumbotron">
-            Currently active forums: {{count}}
+            Jumlah Forum Yang Aktif: {{count}}
             <form method="POST" action="{% url 'addInForum' %}">
                 {% csrf_token %}
-            <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Add more</button>
+            <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Tambah Diskusi</button>
             </form>
         </h2>
             <div class="card-columns" style="padding: 10px; margin: 20px;"></div>
@@ -35,7 +35,7 @@
                             </h5>
                             <hr>
                             <p> By: {{forum.name}}</p>
-                            email- {{forum.email}}
+                            Email: {{forum.email}}
                             <hr>     
                             <h4>Views from other users</h4>
                             {%for discuss in discussions%}
@@ -48,7 +48,7 @@
                             {%endfor%}
                             <form method="POST" action="{% url 'addInDiscussion' %}">
                                 {% csrf_token %}
-                            <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Add more</button>
+                            <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Tambah Komentar</button>
                             </form>
                         </div>
                 </div>
