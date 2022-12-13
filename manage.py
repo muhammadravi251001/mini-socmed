@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DataFlair_discsnForum.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Mini_Socmed.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
