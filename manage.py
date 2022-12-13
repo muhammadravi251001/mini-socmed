@@ -2,7 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+# Reference: https://data-flair.training/blogs/discussion-forum-python-django/
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Mini_Socmed.settings')
