@@ -87,7 +87,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db_mini_socmed',
-        'HOST': 'database-1.cdvrlsstpnjm.us-east-1.rds.amazonaws.com',
+        'HOST': 'database-mini-socmed-kowan.cdvrlsstpnjm.us-east-1.rds.amazonaws.com',
         'USER': 'admin',
         'PASSWORD': 'adminadmin',
         'PORT': '3306'
