@@ -15,19 +15,30 @@
 </head>
 <body>
         <h2 class="jumbotron">
-            Jumlah Forum Yang Aktif: {{count}}
-            <form method="POST" action="{% url 'addInForum' %}">
-                {% csrf_token %}
-            <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Tambah Diskusi</button>
-            </form>
-        
+            <!--  {% if count == 0 %} -->
+            <!--  Belum Ada Forum Yang Dibuat Disini -->
+            <!--  {% endif %} -->
+            Jumlah Forum Yang Aktif: {{count}} 
+            &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; 
+            [MINI-SOCMED KOWAN]
+            <br>
+            <hr style="height:1px; background-color:#333;"/>
+            <div>
+                <form method="POST" action="{% url 'addInForum' %}" style="float: left;">
+                    {% csrf_token %}
+                <button class="btn btn-primary" style="width:fit-content; padding: 4px; margin:10px;">Tambah Forum</button>
+                </form>
+    
+                <form method="POST" action="{% url 'addInDiscussion' %}"  style="float: right;">
+                    {% csrf_token %}
+                <button class="btn btn-primary" style="width:fit-content; padding: 4px; margin:10px;">Tambah Komentar</button>
+                </form>
+            </div>
+            
         </h2>
             <div class="card-columns" style="padding: 10px; margin: 20px;"></div>
-            
-            
             {%for forum in forums %}
-            
-                <div class="card box container">
+                <div class="card box container" style="padding: 25px">
                     <br>
                     <h5 class="card-title">
                         <a href='{{forum.link}}'><h3>{{forum.topic}}</h3></a> 
@@ -40,18 +51,20 @@
                             <!-- <p> Tanggal Dibuat: {{forum.date_created}}</p> -->
                             <hr>     
                             <h4>Komentar dari Pengguna Lain:</h4>
-                            {%for discuss in discussions%}
-                            {%for objs in discuss%}  
-                            {% if objs.forum == forum %}
-                            <li> {{objs.discuss}}
-                            <br>
-                            {% endif %}
+
+                            {% for discuss in discussions %}
+                            
+                                {% for objs in discuss %}
+                                
+                                    {% if objs.forum == forum %}
+                                    <li> {{objs.discuss}}
+                                    <br>
+                                    {% endif %}
+                                
+                                {%endfor%}
+
+                            
                             {%endfor%}
-                            {%endfor%}
-                            <form method="POST" action="{% url 'addInDiscussion' %}">
-                                {% csrf_token %}
-                            <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Tambah Komentar</button>
-                            </form>
                         </div>
                 </div>
             </div>

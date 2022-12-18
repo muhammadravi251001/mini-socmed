@@ -2,7 +2,7 @@ from django.db import models
     
 # Parent Model
 class forum(models.Model):
-    name = models.CharField(max_length=200, default="anonymous" )
+    name = models.CharField(max_length=200, default="anonymous")
     email = models.CharField(max_length=200, null=True)
     topic = models.CharField(max_length=300)
     description = models.CharField(max_length=1000, blank=True)
@@ -14,7 +14,7 @@ class forum(models.Model):
 
 # Child Model
 class Discussion(models.Model):
-    forum = models.ForeignKey(forum,blank=True, on_delete=models.CASCADE)
+    forum = models.ForeignKey(forum, blank=True, on_delete=models.CASCADE)
     discuss = models.CharField(max_length=1000)
 
     def __str__(self):
