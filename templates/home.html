@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum Diskusi</title>
+    <title>Mini-Socmed</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"0>
     <style>
         .box{
@@ -20,6 +20,7 @@
                 {% csrf_token %}
             <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Tambah Diskusi</button>
             </form>
+        
         </h2>
             <div class="card-columns" style="padding: 10px; margin: 20px;"></div>
             
@@ -35,14 +36,15 @@
                             </h5>
                             <hr>
                             <p> Dari: {{forum.name}}</p>
-                            Email: {{forum.email}}
+                            <p> Email: {{forum.email}}</p>
+                            <p> Tanggal Dibuat: {{forum.date_created}}</p>
                             <hr>     
                             <h4>Komentar dari Pengguna Lain:</h4>
                             {%for discuss in discussions%}
                             {%for objs in discuss%}  
                             {% if objs.forum == forum %}
-                               - {{objs.discuss}}
-                               <br>
+                            <li> {{objs.discuss}}
+                            <br>
                             {% endif %}
                             {%endfor%}
                             {%endfor%}
